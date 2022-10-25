@@ -1,0 +1,34 @@
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.profile-main .share {
+    align-self: flex-end;
+    padding-right: 17px;
+}
+
+.profile-main .img-container {
+    width: 88px;
+    height: 88px;
+}
+
+.profile-main .img-container img {
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+}
+
+.profile-main p {
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.profile-main p:last-child {
+    visibility: hidden;
+}
