@@ -14,7 +14,7 @@ const linkTree = {
     {
       image: logo,
       twitterUsername: 'Wuzpa',
-      slackName: 'MrP'
+      slackName: 'peterime'
     }
   ],
   links: [
