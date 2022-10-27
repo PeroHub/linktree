@@ -1,0 +1,17 @@
+.footer-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container span {
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 700px) {
+    .footer-container {
+        flex-direction: row;
+    }
+}

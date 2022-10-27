@@ -7,12 +7,12 @@ export default function Profile({data}) {
   return (
     <div className='profile-main'>
         <img className='share' src={share} alt="share" />
-        <div className='img-container'>
+        <div id='profile__img' className='img-container'>
             <img src={data[0].image} alt="Peter Ime" />
             
         </div>
-        <p>{data[0].twitterUsername}</p>
-        <p>{data[0].slackName}</p>
+        <p id='twitter'>{data[0].twitterUsername}</p>
+        <p id='slack'>{data[0].slackName}</p>
     </div>
   )
 }

@@ -1,9 +1,12 @@
 // import logo from './logo.svg';
-import logo from './image/peter.jpg'
-import './App.css';
 import Link from './components/link/Link';
 import Profile from './components/profile/Profile';
 import Footer from './components/footer/Footer';
+
+import logo from './image/peter.jpg'
+import slack from './image/slack.png'
+import github from './image/github.png'
+import './App.css';
 
 
 const linkTree = {
@@ -15,12 +18,12 @@ const linkTree = {
     }
   ],
   links: [
-    { name : 'Twitter Link', link: 'https://twitter.com/Wuzpa' },
-    { name : 'Zuri Team', link: 'https://traning.zuri.team' },
-    { name : 'Zuri Books', link: 'https://books.zuri.team' },
-    { name : 'Python Books', link: 'https://books.zuri.team/python-for-beginners?ref_id=mrp' },
-    { name : 'Background Check for Coders', link: ' https://background.zuri.team' },
-    { name : 'Design Books', link: 'https://books.zuri.team/design-rules' },
+    // { name : 'Twitter Link', link: 'https://twitter.com/Wuzpa' },
+    { name : 'Zuri Team', id: 'btn__zuri', link: 'https://traning.zuri.team' },
+    { name : 'Zuri Books', id: 'books', link: 'https://books.zuri.team' },
+    { name : 'Python Books', id: 'book__python', link: 'https://books.zuri.team/python-for-beginners?ref_id=mrp' },
+    { name : 'Background Check for Coders', id: 'pitch', link: ' https://background.zuri.team' },
+    { name : 'Design Books', id: 'book__design', link: 'https://books.zuri.team/design-rules' },
   ]
 }
 
@@ -31,7 +34,11 @@ function App() {
         <Profile data={linkTree.profile} />
       </header>
       <main>
-        <Link />
+        <Link data={linkTree.links} />
+        <div className='icon'>
+          <img src={slack} alt="slack" />
+          <img src={github} alt="github" />
+        </div>
       </main>
       <footer>
         <Footer />
