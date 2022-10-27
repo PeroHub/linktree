@@ -18,10 +18,10 @@ const linkTree = {
     }
   ],
   links: [
-    // { name : 'Twitter Link', link: 'https://twitter.com/Wuzpa' },
+    { name : 'Twitter Link', id: 'twitter', link: 'https://twitter.com/Wuzpa' },
     { name : 'Zuri Team', id: 'btn__zuri', link: 'https://traning.zuri.team' },
-    { name : 'Zuri Books', id: 'books', link: 'https://books.zuri.team' },
-    { name : 'Python Books', id: 'book__python', link: 'https://books.zuri.team/python-for-beginners?ref_id=mrp' },
+    { name : 'Zuri Books', id: 'books', subText: 'This is where you find books about design and coding', link: 'https://books.zuri.team' },
+    { name : 'Python Books', id: 'book__python', link: 'https://books.zuri.team/python-for-beginners?ref_id=peterime' },
     { name : 'Background Check for Coders', id: 'pitch', link: ' https://background.zuri.team' },
     { name : 'Design Books', id: 'book__design', link: 'https://books.zuri.team/design-rules' },
   ]

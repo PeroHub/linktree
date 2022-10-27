@@ -6,9 +6,13 @@ export default function Link({data}) {
     <div className='link'>
       {data.map((item, index) => (
 
-      <div key={index} style={{marginTop: "15px"}}>
-        <a key={index}>
-          <button id={item.id}>{item.name}</button>
+      <div key={index} className='sub-con' >
+        <a key={index} href={item.link}>
+          <div className='btn'>
+
+          <p id={item.id}>{item.name}</p>
+          <p>{item.subText ? item.subText : ""}</p>
+          </div>
         </a>
       </div>
       ))}

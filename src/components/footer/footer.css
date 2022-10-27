@@ -1,12 +1,20 @@
 .footer-container {
-    margin-top: 100px;
+    margin-top: 140px;
+    padding: 15px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
+    border-top: 1px solid #D0D5DD;
+    ;
 }
 
 .footer-container span {
+    color: #667085;
+}
+
+.footer-container img, span {
     margin-top: 20px;
 }
 

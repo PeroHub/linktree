@@ -11,6 +11,13 @@
     padding-right: 17px;
 }
 
+.profile-main .shareArrow {
+    display: none;
+    align-self: flex-end;
+    position: relative;
+    right: 237px;
+}
+
 .profile-main .img-container {
     width: 88px;
     height: 88px;
@@ -31,4 +38,14 @@
 
 .profile-main p:last-child {
     visibility: hidden;
+}
+
+@media screen and (min-width: 800px) {
+    .profile-main .share {
+        display: none;
+    }
+
+    .profile-main .shareArrow {
+        display: initial;
+    }
 }
