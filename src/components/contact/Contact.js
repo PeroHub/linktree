@@ -96,9 +96,9 @@ export default function Contact() {
                 onChange={formik.handleChange}
                 value={formik.values.first_name}
               />
-              {formik.errors.first_name ? <div>{formik.errors.first_name}</div> : null}
+              {formik.errors.first_name ? <div className='error'>{formik.errors.first_name}</div> : null}
             </div>
-            <div>
+            <div className='form-input-con'>
               <p><label htmlFor="last_name">Last Name</label></p>
               <input
                 id="last_name"
@@ -108,10 +108,10 @@ export default function Contact() {
                 onChange={formik.handleChange}
                 value={formik.values.last_name}
               />
-              {formik.errors.last_name ? <div>{formik.errors.last_name}</div> : null}
+              {formik.errors.last_name ? <div className='error'>{formik.errors.last_name}</div> : null}
             </div>
           </div>
-          <div>
+          <div className='input-con'>
             <p><label htmlFor="email">Email</label></p>
             <input
               id="'email'"
@@ -121,9 +121,9 @@ export default function Contact() {
               onChange={formik.handleChange}
               value={formik.values.email}
             />
-            {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+            {formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
           </div>
-          <div>
+          <div className='input-con'>
             <p><label for="message">Message</label></p>
             <textarea 
               placeholder="Send me a message and I'll reply you as soon as possible..."
@@ -134,13 +134,13 @@ export default function Contact() {
               rows="4" 
               cols="50">
               </textarea>
-            {formik.errors.message ? <div>{formik.errors.message}</div> : null}
+            {formik.errors.message ? <div className='error'>{formik.errors.message}</div> : null}
           </div>
-          <div>
+          <div className='check-con'>
             <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" />
             <label for="checkbox">{`You agree to providing your data to ${authorName} who may contact you. `}</label>
           </div>
-       <button type="submit" id='btn__submit'>Submit</button>
+       <button type="submit" id='btn__submit'>Send message</button>
      </form>
         </div>
       </div>
