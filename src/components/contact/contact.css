@@ -1,0 +1,29 @@
+.contact-sub-con {
+    margin: 0 auto;
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.contact-main .contact-sub-con {
+    position: relative;
+    top: 50px;
+}
+
+.contact-main .contact-sub-con h1 {
+    font-size: 2.25rem;
+    line-height: 44px;
+    font-weight: 600;
+}
+
+.contact-main .contact-sub-con p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 700px) {
+    .contact-sub-con {
+        width: 60%;
+    }
+}

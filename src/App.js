@@ -24,6 +24,8 @@ const linkTree = {
     { name : 'Python Books', id: 'book__python', link: 'https://books.zuri.team/python-for-beginners?ref_id=peterime' },
     { name : 'Background Check for Coders', id: 'pitch', link: ' https://background.zuri.team' },
     { name : 'Design Books', id: 'book__design', link: 'https://books.zuri.team/design-rules' },
+    { name : 'Contact Me', id: 'contact', link: '/contact' },
+
   ]
 }
 
