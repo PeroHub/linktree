@@ -1,7 +1,46 @@
 import React, { useState } from 'react'
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { useNavigate } from "react-router-dom";
 import { useFormik } from 'formik';
 import Footer from '../footer/Footer'
 import './contact.css'
+
+
+export function AlertDialog({open, handleClose}) {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/")
+  }
+  
+ 
+  return (
+    <div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle sx={{color: "green"}} >
+          Success
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Your message has been delivered successfully
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleNavigate}>Go to home</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+}
 
 
  const validate = values => {
@@ -54,13 +93,17 @@ const authorName = "Peter Ime"
 
 
 export default function Contact() {
-  const [ isSubmit, setIsSubmit ] = useState(false)
+  // const [ isSubmit, setIsSubmit ] = useState(false)
+  const [open, setOpen] = useState(false);
 
-  const handleSubmit = values => {
-    setIsSubmit(true)
-    alert(JSON.stringify(values, null, 2));
-      console.log(values)
-  }
+ 
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
+  
 
   const formik = useFormik({
     initialValues: {
@@ -71,7 +114,8 @@ export default function Contact() {
     },
     validate,
     onSubmit: values => {
-      handleSubmit(values)
+      setOpen(true);
+      formik.values = {}
     },
   });
 
@@ -79,7 +123,7 @@ export default function Contact() {
 
   return (
     <div className='contact-main'>
-      {isSubmit ? <p>Message submit</p>: null}
+      <AlertDialog open={open} handleClose={handleClose} result={formik.values} />
       <div className='contact-sub-con'>
         <h1>Contact Me</h1>
         <p>Hi there, contact me to ask me about anything you have in mind.</p>
@@ -87,7 +131,7 @@ export default function Contact() {
         <form onSubmit={formik.handleSubmit}>
           <div className='form-container'>
             <div className='form-input-con'>
-              <p><label htmlFor="first_name">First Name</label></p>
+              <label htmlFor="first_name">First Name</label>
               <input
                 id="first_name"
                 placeholder='Enter your first name'
@@ -99,7 +143,7 @@ export default function Contact() {
               {formik.errors.first_name ? <div className='error'>{formik.errors.first_name}</div> : null}
             </div>
             <div className='form-input-con'>
-              <p><label htmlFor="last_name">Last Name</label></p>
+              <label htmlFor="last_name">Last Name</label>
               <input
                 id="last_name"
                 placeholder='Enter your last name'
@@ -112,9 +156,9 @@ export default function Contact() {
             </div>
           </div>
           <div className='input-con'>
-            <p><label htmlFor="email">Email</label></p>
+            <label htmlFor="email">Email</label>
             <input
-              id="'email'"
+              id="email"
               placeholder='yourname@email.com'
               name="email"
               type="email"
@@ -124,10 +168,10 @@ export default function Contact() {
             {formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
           </div>
           <div className='input-con'>
-            <p><label for="message">Message</label></p>
+            <label for="message">Message</label>
             <textarea 
               placeholder="Send me a message and I'll reply you as soon as possible..."
-              id="'message'" 
+              id="message" 
               name="message" 
               onChange={formik.handleChange}
               value={formik.values.message}

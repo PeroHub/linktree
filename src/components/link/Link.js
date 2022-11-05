@@ -7,10 +7,10 @@ export default function Link({data}) {
       {data.map((item, index) => (
 
       <div key={index} className='sub-con' >
-        <a key={index} href={item.link}>
+        <a  id={item.id} key={index} href={item.link}>
           <div className='btn'>
 
-          <p id={item.id}>{item.name}</p>
+          <p>{item.name}</p>
           <p>{item.subText ? item.subText : ""}</p>
           </div>
         </a>
